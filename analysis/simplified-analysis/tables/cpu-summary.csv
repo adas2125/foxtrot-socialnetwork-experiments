@@ -1,0 +1,25 @@
+condition,resource_type,resource,period,average_cpu_percent,maximum_cpu_percent,samples,denominator
+fixed3,redis_master,redis-cluster-0,full_window,10.056134,11.005133,41,percent of one CPU core
+fixed3,redis_master,redis-cluster-1,full_window,10.553492,11.655459,41,percent of one CPU core
+fixed3,redis_master,redis-cluster-2,full_window,11.132717,12.296928,41,percent of one CPU core
+fixed3,node,node,full_window,66.231141,71.685000,41,percent of total node capacity
+autoscale,redis_master,redis-cluster-0,full_window,9.602653,12.412404,41,percent of one CPU core
+autoscale,redis_master,redis-cluster-1,full_window,10.794872,14.296835,41,percent of one CPU core
+autoscale,redis_master,redis-cluster-2,full_window,10.951828,15.044620,41,percent of one CPU core
+autoscale,redis_master,redis-cluster-6,full_window,5.110539,7.607057,41,percent of one CPU core
+autoscale,node,node,full_window,93.565016,99.881051,41,percent of total node capacity
+fixed4,redis_master,redis-cluster-0,full_window,5.497495,6.352054,41,percent of one CPU core
+fixed4,redis_master,redis-cluster-1,full_window,10.464940,11.997532,41,percent of one CPU core
+fixed4,redis_master,redis-cluster-2,full_window,10.966346,12.513168,41,percent of one CPU core
+fixed4,redis_master,redis-cluster-6,full_window,4.862036,5.420140,41,percent of one CPU core
+fixed4,node,node,full_window,65.283666,72.190833,41,percent of total node capacity
+fixed3,service_total,home-timeline-service,full_window,137.723839,154.353720,41,"percent of one CPU core, summed across replicas"
+fixed3,service_total,nginx-thrift,full_window,1699.052913,1860.740521,41,"percent of one CPU core, summed across replicas"
+fixed3,service_total,post-storage-memcached,full_window,98.594709,107.581269,41,"percent of one CPU core, summed across replicas"
+fixed3,service_total,post-storage-service,full_window,421.983604,467.265777,41,"percent of one CPU core, summed across replicas"
+fixed4,service_total,home-timeline-service,full_window,139.111291,157.048833,41,"percent of one CPU core, summed across replicas"
+fixed4,service_total,nginx-thrift,full_window,1677.134665,1864.902382,41,"percent of one CPU core, summed across replicas"
+fixed4,service_total,post-storage-memcached,full_window,97.332556,109.622581,41,"percent of one CPU core, summed across replicas"
+fixed4,service_total,post-storage-service,full_window,413.362037,473.002140,41,"percent of one CPU core, summed across replicas"
+autoscale,node,node,during_reshard,90.076473,94.765349,25,percent of total node capacity
+autoscale,node,node,after_reshard,99.015864,99.881051,16,percent of total node capacity

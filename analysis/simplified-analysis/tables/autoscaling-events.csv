@@ -1,0 +1,7 @@
+event,timestamp_utc,description,elapsed_seconds
+workload_start,2026-08-19 07:33:05+00:00,formal wrk2 start,0.000000
+scale_up_trigger,2026-08-19 07:33:05+00:00,artificial 10% Redis CPU threshold crossed,0.000000
+reshard_start,2026-08-19 07:33:05+00:00,operator created the reshard job,0.000000
+reshard_complete,2026-08-19 07:39:18+00:00,operator observed successful resharding,373.000000
+freeze,2026-08-19 07:59:31.304085119+00:00,monitor froze autoscaling after four masters,1586.304085
+workload_end,2026-08-19 07:43:05+00:00,formal wrk2 end,600.000000

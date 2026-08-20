@@ -1,0 +1,1 @@
+rediscluster.cache.example.com/redis-cluster patched

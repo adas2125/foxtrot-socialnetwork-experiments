@@ -1,0 +1,17 @@
+global:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: "2"
+      memory: 2Gi
+  redis:
+    cluster:
+      enabled: false
+      external:
+        enabled: true
+        address: redis-cluster-headless.foxtrot.svc.cluster.local
+        role: home-timeline
+    standalone:
+      enabled: true
