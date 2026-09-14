@@ -2,6 +2,17 @@
   {{ .Values.global.mongodb.sharding.svc.user }}:{{ .Values.global.mongodb.sharding.svc.password }}@{{ .Values.global.mongodb.sharding.svc.name }}
 {{- end }}
 
+{{- define "mongodb-external.connection" -}}
+{{- $external := .Values.global.mongodb.external -}}
+{{- $address := required "global.mongodb.external.address is required when external MongoDB is enabled" (trim (default "" $external.address)) -}}
+{{- if not (regexMatch "^[A-Za-z0-9][A-Za-z0-9.-]*$" $address) -}}
+{{- fail "global.mongodb.external.address must be a hostname or IPv4 address, without credentials, protocol, or port" -}}
+{{- end -}}
+{{- $username := required "global.mongodb.external.username is required when external MongoDB is enabled" $external.username -}}
+{{- $password := required "global.mongodb.external.password is required when external MongoDB is enabled" $external.password -}}
+{{- printf "%s:%s@%s" ($username | urlquery | replace "+" "%20") ($password | urlquery | replace "+" "%20") $address -}}
+{{- end -}}
+
 {{- define "memcached-cluster.connection" }}
   {{ .Release.Name }}-mcrouter
 {{- end }}
@@ -15,6 +26,19 @@
 {{- end }}
 
 {{- define "socialnetwork.templates.other.service-config.json"  }}
+{{- $externalMongoDB := .Values.global.mongodb.external | default dict -}}
+{{- $externalMongoDBEnabled := $externalMongoDB.enabled | default false -}}
+{{- if $externalMongoDBEnabled -}}
+{{- if ne $externalMongoDB.role "post-storage" -}}
+{{- fail "global.mongodb.external.role must be post-storage for this trial" -}}
+{{- end -}}
+{{- if .Values.global.mongodb.sharding.enabled -}}
+{{- fail "external MongoDB and bundled MongoDB sharding cannot both be enabled" -}}
+{{- end -}}
+{{- if or (lt (int $externalMongoDB.port) 1) (gt (int $externalMongoDB.port) 65535) -}}
+{{- fail "global.mongodb.external.port must be between 1 and 65535" -}}
+{{- end -}}
+{{- end -}}
 {{- $externalRedisClusterEnabled := .Values.global.redis.cluster.external.enabled }}
 {{- $externalRedisClusterRole := .Values.global.redis.cluster.external.role }}
 {{- $socialGraphRedisClusterEnabled := or .Values.global.redis.cluster.enabled (and $externalRedisClusterEnabled (eq $externalRedisClusterRole "social-graph")) }}
@@ -117,8 +141,8 @@
       "keepalive_ms": 10000
     },
     "post-storage-mongodb": {
-      "addr": {{ ternary (include "mongodb-sharded.connection" . | trim) "post-storage-mongodb" .Values.global.mongodb.sharding.enabled | quote}},
-      "port": {{ ternary .Values.global.mongodb.sharding.svc.port 27017 .Values.global.mongodb.sharding.enabled}},
+      "addr": {{ if $externalMongoDBEnabled }}{{ include "mongodb-external.connection" . | quote }}{{ else }}{{ ternary (include "mongodb-sharded.connection" . | trim) "post-storage-mongodb" .Values.global.mongodb.sharding.enabled | quote }}{{ end }},
+      "port": {{ if $externalMongoDBEnabled }}{{ int $externalMongoDB.port }}{{ else }}{{ ternary .Values.global.mongodb.sharding.svc.port 27017 .Values.global.mongodb.sharding.enabled }}{{ end }},
       "connections": 512,
       "timeout_ms": 10000,
       "keepalive_ms": 10000

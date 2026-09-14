@@ -38,6 +38,13 @@ global:
     standalone:
       enabled: true
   mongodb:
+    external:
+      enabled: false
+      role: ""
+      address: ""
+      port: 27017
+      username: ""
+      password: ""
     standalone:
       enabled: true
     sharding:
