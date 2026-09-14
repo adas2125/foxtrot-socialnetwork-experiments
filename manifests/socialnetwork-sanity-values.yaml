@@ -1,0 +1,15 @@
+# Apply after socialnetwork-foxtrot-values.yaml.
+# Application replicas and HPAs retain the chart defaults.
+global:
+  mongodb:
+    standalone:
+      enabled: true
+    sharding:
+      enabled: false
+    external:
+      enabled: true
+      role: post-storage
+      address: sn-mongodb-sharded.mambo-socialnetwork.svc.cluster.local
+      port: 27017
+      username: root
+      password: mongodb123 # Matches the existing MongoDB benchmark values.

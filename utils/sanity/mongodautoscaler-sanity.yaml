@@ -1,0 +1,26 @@
+apiVersion: autoscaler.mongodb.io/v1alpha1
+kind: MongodAutoscaler
+metadata:
+  name: socialnetwork-sanity
+  namespace: mambo-socialnetwork
+spec:
+  bitnami:
+    releaseName: sn-mongodb-sharded
+    namespace: mambo-socialnetwork
+    servicePort: 27017
+  shardScaleBounds:
+    minShards: 1
+    maxShards: 1
+  replicaScaleBounds:
+    minReplicas: 1
+    maxReplicas: 1
+  policy:
+    cpuTargetPercent: 60
+    cpuTolerancePercent: 10
+    iowaitTargetPercent: 30
+    iowaitTolerancePercent: 5
+    window: 5m
+    cooldownSeconds: 300
+  prometheus:
+    url: http://prometheus-operated.monitoring.svc.cluster.local:9090
+    nodeExporterPort: 9100
