@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sn-wrk2
+  namespace: social-network
+  labels:
+    app: sn-wrk2
+spec:
+  restartPolicy: Never
+  automountServiceAccountToken: false
+  nodeSelector:
+    kubernetes.io/arch: amd64
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: NotIn
+                values:
+                  - i-091443c764376d8ba
+                  - i-0fd9d8a829d0dfba9
+              - key: node-role.kubernetes.io/control-plane
+                operator: DoesNotExist
+  containers:
+    - name: wrk2
+      image: ubuntu:24.04
+      resources:
+        requests:
+          cpu: "1"
+          memory: 512Mi
+        limits:
+          memory: 2Gi
+      env:
+        - name: DEBIAN_FRONTEND
+          value: noninteractive
+        - name: LUA_PATH
+          value: "/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;;"
+        - name: LUA_CPATH
+          value: "/usr/lib/x86_64-linux-gnu/lua/5.1/?.so;;"
+      command: ["/bin/bash", "-ec"]
+      args:
+        - |
+          set -o pipefail
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            build-essential libssl-dev zlib1g-dev git ca-certificates \
+            lua-socket python3 curl jq
+
+          git init /work/DeathStarBench
+          cd /work/DeathStarBench
+          git remote add origin https://github.com/delimitrou/DeathStarBench.git
+          git fetch --depth 1 origin 6ecb09706140f8730b5385c08f1386c654c3c526
+          git checkout --detach FETCH_HEAD
+          git submodule update --init -- wrk2/deps/luajit
+
+          cd wrk2
+          make -j2
+          test -x ./wrk
+          ./deps/luajit/src/luajit \
+            -e 'local socket = require("socket"); print("LuaSocket OK: " .. socket._VERSION)'
+
+          touch /work/READY
+          echo "READY: wrk2 built; no workload has been started."
+          exec sleep infinity
+      readinessProbe:
+        exec:
+          command: ["/bin/sh", "-c", "test -f /work/READY"]
+        periodSeconds: 5
+      volumeMounts:
+        - name: work
+          mountPath: /work
+  volumes:
+    - name: work
+      emptyDir: {}
