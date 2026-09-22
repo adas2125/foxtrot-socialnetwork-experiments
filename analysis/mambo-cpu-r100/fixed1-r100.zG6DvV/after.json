@@ -1,0 +1,1236 @@
+{
+  "utc": "2026-09-20T20:24:00.419582+00:00",
+  "cache": {
+    "pid": 1,
+    "uptime": 134336,
+    "get_hits": 693475,
+    "get_misses": 6873003,
+    "limit_maxbytes": 67108864,
+    "bytes": 62624417,
+    "curr_items": 44605,
+    "evictions": 6827453
+  },
+  "prometheus": {
+    "cpu_cores_by_pod": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-0"
+            },
+            "value": [
+              1789935840.4,
+              "0.005586454981998159"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-1"
+            },
+            "value": [
+              1789935840.4,
+              "0.006713370184046349"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-2"
+            },
+            "value": [
+              1789935840.4,
+              "0.007789731142397643"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-3"
+            },
+            "value": [
+              1789935840.4,
+              "0.0035658895640050797"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-4"
+            },
+            "value": [
+              1789935840.4,
+              "0.002963786290832964"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-5"
+            },
+            "value": [
+              1789935840.4,
+              "0.003401116044200613"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-6"
+            },
+            "value": [
+              1789935840.4,
+              "0.005023179355911969"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-7"
+            },
+            "value": [
+              1789935840.4,
+              "0.0038991119440696287"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-8"
+            },
+            "value": [
+              1789935840.4,
+              "0.0035986266040084593"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-9"
+            },
+            "value": [
+              1789935840.4,
+              "0.003252398278083743"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-mongos-d6f696846-4wr87"
+            },
+            "value": [
+              1789935840.4,
+              "0.12030346556693536"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-mongos-d6f696846-d57jh"
+            },
+            "value": [
+              1789935840.4,
+              "0.0624995930053083"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-mongos-d6f696846-vbh4s"
+            },
+            "value": [
+              1789935840.4,
+              "0.05334247522984757"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-configsvr-0"
+            },
+            "value": [
+              1789935840.4,
+              "0.059212250596941664"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-configsvr-1"
+            },
+            "value": [
+              1789935840.4,
+              "0.07774707259953018"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-configsvr-2"
+            },
+            "value": [
+              1789935840.4,
+              "0.04532164467449811"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-memcached-7c687b9c8b-4w8rf"
+            },
+            "value": [
+              1789935840.4,
+              "0.00009057924693273504"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "unique-id-service-6b5974cb46-756wz"
+            },
+            "value": [
+              1789935840.4,
+              "0.0000038011220196362143"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-mongodb-54d69f5788-fwfln"
+            },
+            "value": [
+              1789935840.4,
+              "0.003259493121927477"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "social-graph-redis-787c985bd4-tr5nk"
+            },
+            "value": [
+              1789935840.4,
+              "0.0010598031251491107"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "text-service-9984d4557-lkn26"
+            },
+            "value": [
+              1789935840.4,
+              "0.0000029909523690823623"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "url-shorten-memcached-88b745f5b-czsrr"
+            },
+            "value": [
+              1789935840.4,
+              "0.00008325942609260103"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-mention-service-7486b4fc65-jnvf6"
+            },
+            "value": [
+              1789935840.4,
+              "0.0000021797681256756593"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-timeline-service-66f6595464-cgnrp"
+            },
+            "value": [
+              1789935840.4,
+              "0.000022175516856828546"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "compose-post-service-8445f654b6-7p27d"
+            },
+            "value": [
+              1789935840.4,
+              "0.0000015000000000001125"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "home-timeline-redis-5847cfd67-hg4wn"
+            },
+            "value": [
+              1789935840.4,
+              "0.0010488994874330215"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "social-graph-mongodb-7f584b5c-pc79r"
+            },
+            "value": [
+              1789935840.4,
+              "0.0034963406716633535"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "url-shorten-mongodb-67b459df4-s2vft"
+            },
+            "value": [
+              1789935840.4,
+              "0.003464981469162807"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "url-shorten-service-58ff7cff4-wv8tm"
+            },
+            "value": [
+              1789935840.4,
+              "0.000016756198385178856"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "jaeger-f76689f55-l85dx"
+            },
+            "value": [
+              1789935840.4,
+              "0.0028393581537908288"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "post-storage-service-6cc8f4cd45-8mfkj"
+            },
+            "value": [
+              1789935840.4,
+              "0.23729468070558749"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-mongodb-c48f76c5c-2v929"
+            },
+            "value": [
+              1789935840.4,
+              "0.0034675798254200766"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "post-storage-mongodb-6dbccc4985-xwt25"
+            },
+            "value": [
+              1789935840.4,
+              "0.0035298586716763568"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-timeline-mongodb-5df86cdcf4-4rkmn"
+            },
+            "value": [
+              1789935840.4,
+              "0.00354633455769866"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-timeline-redis-5bf7b898bc-jx4cl"
+            },
+            "value": [
+              1789935840.4,
+              "0.0010136305857043186"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "home-timeline-service-7b9847b456-tjpl8"
+            },
+            "value": [
+              1789935840.4,
+              "0.03204324441201084"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-service-868bc7f87b-km8n5"
+            },
+            "value": [
+              1789935840.4,
+              "0.0000030760378861644733"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-service-74bbdbb785-hcvb7"
+            },
+            "value": [
+              1789935840.4,
+              "0.000018534011197631244"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "nginx-thrift-84d9cc6d9c-jppr5"
+            },
+            "value": [
+              1789935840.4,
+              "0.19457157491537444"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "social-graph-service-785664fc55-pq8wx"
+            },
+            "value": [
+              1789935840.4,
+              "0.000023642818401457817"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-memcached-6d9456c4f6-p6v2h"
+            },
+            "value": [
+              1789935840.4,
+              "0.00011814333140436517"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "post-storage-memcached-75d9ccbc8b-9bvb5"
+            },
+            "value": [
+              1789935840.4,
+              "0.07666638287808986"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-frontend-8dc57fbfb-jcqqg"
+            },
+            "value": [
+              1789935840.4,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "sn-wrk2"
+            },
+            "value": [
+              1789935840.4,
+              "0.016551879306972234"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-shard0-data-0"
+            },
+            "value": [
+              1789935840.4,
+              "0.1148563870364417"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-9s758"
+            },
+            "value": [
+              1789935840.4,
+              "0.000941002949852506"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-8gznr"
+            },
+            "value": [
+              1789935840.4,
+              "0.00230199809705043"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-gzqqv"
+            },
+            "value": [
+              1789935840.4,
+              "0.0007809713526845003"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-zbq6q"
+            },
+            "value": [
+              1789935840.4,
+              "0.0008084692194943209"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-5qpp6"
+            },
+            "value": [
+              1789935840.4,
+              "0.0017414379084967331"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-wdfn4"
+            },
+            "value": [
+              1789935840.4,
+              "0.001224627700380715"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-bnzfb"
+            },
+            "value": [
+              1789935840.4,
+              "0.000960092748072074"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-46p8z"
+            },
+            "value": [
+              1789935840.4,
+              "0.00220614677508965"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-xjp95"
+            },
+            "value": [
+              1789935840.4,
+              "0.0010556302069336216"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-pftvq"
+            },
+            "value": [
+              1789935840.4,
+              "0.001773321881606763"
+            ]
+          }
+        ]
+      }
+    },
+    "throttled_seconds_per_second": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": []
+      }
+    },
+    "working_set_bytes": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-0"
+            },
+            "value": [
+              1789935840.41,
+              "34365440"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-1"
+            },
+            "value": [
+              1789935840.41,
+              "51232768"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-2"
+            },
+            "value": [
+              1789935840.41,
+              "49876992"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-3"
+            },
+            "value": [
+              1789935840.41,
+              "49070080"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-4"
+            },
+            "value": [
+              1789935840.41,
+              "32063488"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-5"
+            },
+            "value": [
+              1789935840.41,
+              "50995200"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-6"
+            },
+            "value": [
+              1789935840.41,
+              "32301056"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-7"
+            },
+            "value": [
+              1789935840.41,
+              "32948224"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-8"
+            },
+            "value": [
+              1789935840.41,
+              "15093760"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "foxtrot",
+              "pod": "redis-cluster-9"
+            },
+            "value": [
+              1789935840.41,
+              "16392192"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-mongos-d6f696846-4wr87"
+            },
+            "value": [
+              1789935840.41,
+              "49192960"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-mongos-d6f696846-d57jh"
+            },
+            "value": [
+              1789935840.41,
+              "48893952"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-mongos-d6f696846-vbh4s"
+            },
+            "value": [
+              1789935840.41,
+              "50315264"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-configsvr-0"
+            },
+            "value": [
+              1789935840.41,
+              "167215104"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-configsvr-1"
+            },
+            "value": [
+              1789935840.41,
+              "156377088"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-configsvr-2"
+            },
+            "value": [
+              1789935840.41,
+              "148762624"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-memcached-7c687b9c8b-4w8rf"
+            },
+            "value": [
+              1789935840.41,
+              "1708032"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "unique-id-service-6b5974cb46-756wz"
+            },
+            "value": [
+              1789935840.41,
+              "1097728"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-mongodb-54d69f5788-fwfln"
+            },
+            "value": [
+              1789935840.41,
+              "62619648"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "social-graph-redis-787c985bd4-tr5nk"
+            },
+            "value": [
+              1789935840.41,
+              "2846720"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "text-service-9984d4557-lkn26"
+            },
+            "value": [
+              1789935840.41,
+              "1200128"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "url-shorten-memcached-88b745f5b-czsrr"
+            },
+            "value": [
+              1789935840.41,
+              "1708032"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-mention-service-7486b4fc65-jnvf6"
+            },
+            "value": [
+              1789935840.41,
+              "1761280"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-timeline-service-66f6595464-cgnrp"
+            },
+            "value": [
+              1789935840.41,
+              "1675264"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "compose-post-service-8445f654b6-7p27d"
+            },
+            "value": [
+              1789935840.41,
+              "1331200"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "home-timeline-redis-5847cfd67-hg4wn"
+            },
+            "value": [
+              1789935840.41,
+              "3108864"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "social-graph-mongodb-7f584b5c-pc79r"
+            },
+            "value": [
+              1789935840.41,
+              "62423040"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "url-shorten-mongodb-67b459df4-s2vft"
+            },
+            "value": [
+              1789935840.41,
+              "62525440"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "url-shorten-service-58ff7cff4-wv8tm"
+            },
+            "value": [
+              1789935840.41,
+              "2138112"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "jaeger-f76689f55-l85dx"
+            },
+            "value": [
+              1789935840.41,
+              "757280768"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "post-storage-service-6cc8f4cd45-8mfkj"
+            },
+            "value": [
+              1789935840.41,
+              "12435456"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-mongodb-c48f76c5c-2v929"
+            },
+            "value": [
+              1789935840.41,
+              "62914560"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "post-storage-mongodb-6dbccc4985-xwt25"
+            },
+            "value": [
+              1789935840.41,
+              "61931520"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-timeline-mongodb-5df86cdcf4-4rkmn"
+            },
+            "value": [
+              1789935840.41,
+              "62267392"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-timeline-redis-5bf7b898bc-jx4cl"
+            },
+            "value": [
+              1789935840.41,
+              "2895872"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "home-timeline-service-7b9847b456-tjpl8"
+            },
+            "value": [
+              1789935840.41,
+              "8228864"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-service-868bc7f87b-km8n5"
+            },
+            "value": [
+              1789935840.41,
+              "1085440"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-service-74bbdbb785-hcvb7"
+            },
+            "value": [
+              1789935840.41,
+              "1994752"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "nginx-thrift-84d9cc6d9c-jppr5"
+            },
+            "value": [
+              1789935840.41,
+              "21139456"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "social-graph-service-785664fc55-pq8wx"
+            },
+            "value": [
+              1789935840.41,
+              "1904640"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "user-memcached-6d9456c4f6-p6v2h"
+            },
+            "value": [
+              1789935840.41,
+              "1712128"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "post-storage-memcached-75d9ccbc8b-9bvb5"
+            },
+            "value": [
+              1789935840.41,
+              "70742016"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "media-frontend-8dc57fbfb-jcqqg"
+            },
+            "value": [
+              1789935840.41,
+              "15265792"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "social-network",
+              "pod": "sn-wrk2"
+            },
+            "value": [
+              1789935840.41,
+              "59858944"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-mongodb-sharded-shard0-data-0"
+            },
+            "value": [
+              1789935840.41,
+              "522002432"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-9s758"
+            },
+            "value": [
+              1789935840.41,
+              "9453568"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-8gznr"
+            },
+            "value": [
+              1789935840.41,
+              "8499200"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-gzqqv"
+            },
+            "value": [
+              1789935840.41,
+              "8671232"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-zbq6q"
+            },
+            "value": [
+              1789935840.41,
+              "8015872"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-5qpp6"
+            },
+            "value": [
+              1789935840.41,
+              "8888320"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-wdfn4"
+            },
+            "value": [
+              1789935840.41,
+              "8732672"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-bnzfb"
+            },
+            "value": [
+              1789935840.41,
+              "8531968"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-46p8z"
+            },
+            "value": [
+              1789935840.41,
+              "9211904"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-xjp95"
+            },
+            "value": [
+              1789935840.41,
+              "8892416"
+            ]
+          },
+          {
+            "metric": {
+              "namespace": "mambo-socialnetwork",
+              "pod": "sn-sanity-node-exporter-prometheus-node-exporter-pftvq"
+            },
+            "value": [
+              1789935840.41,
+              "8966144"
+            ]
+          }
+        ]
+      }
+    },
+    "node_iowait_percent": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "instance": "172.20.213.167:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.0037288040793093027"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.90.87:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.04779840544521516"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.254.5:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.6196687449786689"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.202.200:9100"
+            },
+            "value": [
+              1789935840.417,
+              "1.0139115891900647"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.254.176:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.014970480084564685"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.121.167:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.007509480719397187"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.211.60:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.018735889533207453"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.102.100:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.036925174447753326"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.11.141:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.0037698506196685126"
+            ]
+          },
+          {
+            "metric": {
+              "instance": "172.20.180.14:9100"
+            },
+            "value": [
+              1789935840.417,
+              "0.007512301393527477"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

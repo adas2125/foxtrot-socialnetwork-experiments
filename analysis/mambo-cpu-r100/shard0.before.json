@@ -1,0 +1,443 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "creationTimestamp": "2026-09-19T23:11:25Z",
+        "generateName": "sn-mongodb-sharded-shard0-data-",
+        "generation": 1,
+        "labels": {
+            "app.kubernetes.io/component": "shardsvr",
+            "app.kubernetes.io/instance": "sn-mongodb-sharded",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "mongodb-sharded",
+            "app.kubernetes.io/version": "8.0.13",
+            "apps.kubernetes.io/pod-index": "0",
+            "controller-revision-hash": "sn-mongodb-sharded-shard0-data-65ffcc5f5b",
+            "helm.sh/chart": "mongodb-sharded-9.4.12",
+            "shard": "0",
+            "statefulset.kubernetes.io/pod-name": "sn-mongodb-sharded-shard0-data-0"
+        },
+        "name": "sn-mongodb-sharded-shard0-data-0",
+        "namespace": "mambo-socialnetwork",
+        "ownerReferences": [
+            {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "StatefulSet",
+                "name": "sn-mongodb-sharded-shard0-data",
+                "uid": "9bddc26f-c2d0-44f2-a803-66a302b0093e"
+            }
+        ],
+        "resourceVersion": "19954643",
+        "uid": "e0c3d34c-619b-4678-985a-a3692f0d9128"
+    },
+    "spec": {
+        "affinity": {
+            "podAntiAffinity": {
+                "requiredDuringSchedulingIgnoredDuringExecution": [
+                    {
+                        "labelSelector": {
+                            "matchExpressions": [
+                                {
+                                    "key": "app.kubernetes.io/component",
+                                    "operator": "In",
+                                    "values": [
+                                        "shardsvr"
+                                    ]
+                                }
+                            ]
+                        },
+                        "topologyKey": "kubernetes.io/hostname"
+                    }
+                ]
+            }
+        },
+        "automountServiceAccountToken": false,
+        "containers": [
+            {
+                "command": [
+                    "/bin/bash",
+                    "/entrypoint/replicaset-entrypoint.sh"
+                ],
+                "env": [
+                    {
+                        "name": "MONGODB_ENABLE_NUMACTL",
+                        "value": "no"
+                    },
+                    {
+                        "name": "BITNAMI_DEBUG",
+                        "value": "false"
+                    },
+                    {
+                        "name": "MONGODB_SYSTEM_LOG_VERBOSITY",
+                        "value": "0"
+                    },
+                    {
+                        "name": "MONGODB_INIT_RETRY_ATTEMPTS",
+                        "value": "24"
+                    },
+                    {
+                        "name": "MONGODB_INIT_RETRY_DELAY",
+                        "value": "5"
+                    },
+                    {
+                        "name": "MONGODB_DISABLE_SYSTEM_LOG",
+                        "value": "no"
+                    },
+                    {
+                        "name": "MONGODB_PORT_NUMBER",
+                        "value": "27017"
+                    },
+                    {
+                        "name": "MONGODB_SHARDING_MODE",
+                        "value": "shardsvr"
+                    },
+                    {
+                        "name": "MONGODB_POD_NAME",
+                        "valueFrom": {
+                            "fieldRef": {
+                                "apiVersion": "v1",
+                                "fieldPath": "metadata.name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "MONGODB_MONGOS_HOST",
+                        "value": "sn-mongodb-sharded"
+                    },
+                    {
+                        "name": "MONGODB_MONGOS_PORT_NUMBER",
+                        "value": "27017"
+                    },
+                    {
+                        "name": "MONGODB_INITIAL_PRIMARY_HOST",
+                        "value": "sn-mongodb-sharded-shard0-data-0.sn-mongodb-sharded-headless.mambo-socialnetwork.svc.cluster.local"
+                    },
+                    {
+                        "name": "MONGODB_REPLICA_SET_NAME",
+                        "value": "sn-mongodb-sharded-shard-0"
+                    },
+                    {
+                        "name": "MONGODB_ADVERTISED_HOSTNAME",
+                        "value": "$(MONGODB_POD_NAME).sn-mongodb-sharded-headless.mambo-socialnetwork.svc.cluster.local"
+                    },
+                    {
+                        "name": "MONGODB_ROOT_USER",
+                        "value": "root"
+                    },
+                    {
+                        "name": "MONGODB_ROOT_PASSWORD_FILE",
+                        "value": "/bitnami/mongodb/secrets/mongodb-root-password"
+                    },
+                    {
+                        "name": "MONGODB_REPLICA_SET_KEY_FILE",
+                        "value": "/bitnami/mongodb/secrets/mongodb-replica-set-key"
+                    },
+                    {
+                        "name": "MONGODB_ENABLE_IPV6",
+                        "value": "no"
+                    },
+                    {
+                        "name": "MONGODB_ENABLE_DIRECTORY_PER_DB",
+                        "value": "no"
+                    },
+                    {
+                        "name": "MONGODB_EXTRA_FLAGS",
+                        "value": "--wiredTigerCacheSizeGB=0.25"
+                    }
+                ],
+                "image": "docker.io/bitnamilegacy/mongodb-sharded:8.0.13-debian-12-r0",
+                "imagePullPolicy": "IfNotPresent",
+                "livenessProbe": {
+                    "exec": {
+                        "command": [
+                            "pgrep",
+                            "mongod"
+                        ]
+                    },
+                    "failureThreshold": 2,
+                    "initialDelaySeconds": 60,
+                    "periodSeconds": 30,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 20
+                },
+                "name": "mongodb",
+                "ports": [
+                    {
+                        "containerPort": 27017,
+                        "name": "mongodb",
+                        "protocol": "TCP"
+                    }
+                ],
+                "readinessProbe": {
+                    "exec": {
+                        "command": [
+                            "/bin/sh",
+                            "-c",
+                            "mongosh --port $MONGODB_PORT_NUMBER --eval \"db.adminCommand('ping')\""
+                        ]
+                    },
+                    "failureThreshold": 6,
+                    "initialDelaySeconds": 10,
+                    "periodSeconds": 30,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 20
+                },
+                "resources": {
+                    "limits": {
+                        "cpu": "200m",
+                        "memory": "1Gi"
+                    },
+                    "requests": {
+                        "cpu": "200m",
+                        "memory": "512Mi"
+                    }
+                },
+                "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                        "drop": [
+                            "ALL"
+                        ]
+                    },
+                    "privileged": false,
+                    "readOnlyRootFilesystem": true,
+                    "runAsGroup": 1001,
+                    "runAsNonRoot": true,
+                    "runAsUser": 1001,
+                    "seLinuxOptions": {},
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/tmp",
+                        "name": "empty-dir",
+                        "subPath": "tmp-dir"
+                    },
+                    {
+                        "mountPath": "/opt/bitnami/mongodb/conf",
+                        "name": "empty-dir",
+                        "subPath": "app-conf-dir"
+                    },
+                    {
+                        "mountPath": "/opt/bitnami/mongodb/tmp",
+                        "name": "empty-dir",
+                        "subPath": "app-tmp-dir"
+                    },
+                    {
+                        "mountPath": "/opt/bitnami/mongodb/logs",
+                        "name": "empty-dir",
+                        "subPath": "app-logs-dir"
+                    },
+                    {
+                        "mountPath": "/.mongodb",
+                        "name": "empty-dir",
+                        "subPath": "app-mongosh-dir"
+                    },
+                    {
+                        "mountPath": "/entrypoint",
+                        "name": "replicaset-entrypoint-configmap"
+                    },
+                    {
+                        "mountPath": "/bitnami/mongodb",
+                        "name": "datadir"
+                    },
+                    {
+                        "mountPath": "/bitnami/mongodb/secrets/",
+                        "name": "secrets"
+                    }
+                ]
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "hostname": "sn-mongodb-sharded-shard0-data-0",
+        "nodeName": "i-091443c764376d8ba",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {
+            "fsGroup": 1001,
+            "fsGroupChangePolicy": "Always"
+        },
+        "serviceAccount": "sn-mongodb-sharded-shardsvr",
+        "serviceAccountName": "sn-mongodb-sharded-shardsvr",
+        "subdomain": "sn-mongodb-sharded-headless",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            }
+        ],
+        "volumes": [
+            {
+                "name": "datadir",
+                "persistentVolumeClaim": {
+                    "claimName": "datadir-sn-mongodb-sharded-shard0-data-0"
+                }
+            },
+            {
+                "emptyDir": {},
+                "name": "empty-dir"
+            },
+            {
+                "configMap": {
+                    "defaultMode": 420,
+                    "name": "sn-mongodb-sharded-replicaset-entrypoint"
+                },
+                "name": "replicaset-entrypoint-configmap"
+            },
+            {
+                "name": "secrets",
+                "secret": {
+                    "defaultMode": 420,
+                    "secretName": "sn-mongodb-sharded"
+                }
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T23:11:34Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T23:11:25Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-20T00:18:48Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-20T00:18:48Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-19T23:11:25Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "allocatedResources": {
+                    "cpu": "200m",
+                    "memory": "512Mi"
+                },
+                "containerID": "containerd://73d00cc2dedd4c1e8f863e6d49a95a67b87ff98712c1273b7ccb02d508cdd5e8",
+                "image": "docker.io/bitnamilegacy/mongodb-sharded:8.0.13-debian-12-r0",
+                "imageID": "docker.io/bitnamilegacy/mongodb-sharded@sha256:7521e0bb0e27268a3179f9464d4e7ff63981700c785be910b544799f1647ba7e",
+                "lastState": {},
+                "name": "mongodb",
+                "ready": true,
+                "resources": {
+                    "limits": {
+                        "cpu": "200m",
+                        "memory": "1Gi"
+                    },
+                    "requests": {
+                        "cpu": "200m",
+                        "memory": "512Mi"
+                    }
+                },
+                "restartCount": 0,
+                "started": true,
+                "state": {
+                    "running": {
+                        "startedAt": "2026-09-19T23:11:33Z"
+                    }
+                },
+                "user": {
+                    "linux": {
+                        "gid": 1001,
+                        "supplementalGroups": [
+                            1001
+                        ],
+                        "uid": 1001
+                    }
+                },
+                "volumeMounts": [
+                    {
+                        "mountPath": "/tmp",
+                        "name": "empty-dir"
+                    },
+                    {
+                        "mountPath": "/opt/bitnami/mongodb/conf",
+                        "name": "empty-dir"
+                    },
+                    {
+                        "mountPath": "/opt/bitnami/mongodb/tmp",
+                        "name": "empty-dir"
+                    },
+                    {
+                        "mountPath": "/opt/bitnami/mongodb/logs",
+                        "name": "empty-dir"
+                    },
+                    {
+                        "mountPath": "/.mongodb",
+                        "name": "empty-dir"
+                    },
+                    {
+                        "mountPath": "/entrypoint",
+                        "name": "replicaset-entrypoint-configmap"
+                    },
+                    {
+                        "mountPath": "/bitnami/mongodb",
+                        "name": "datadir"
+                    },
+                    {
+                        "mountPath": "/bitnami/mongodb/secrets/",
+                        "name": "secrets"
+                    }
+                ]
+            }
+        ],
+        "hostIP": "172.20.202.200",
+        "hostIPs": [
+            {
+                "ip": "172.20.202.200"
+            }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "100.96.10.67",
+        "podIPs": [
+            {
+                "ip": "100.96.10.67"
+            }
+        ],
+        "qosClass": "Burstable",
+        "startTime": "2026-09-19T23:11:25Z"
+    }
+}

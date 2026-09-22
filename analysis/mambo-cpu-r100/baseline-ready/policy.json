@@ -1,0 +1,51 @@
+{
+    "apiVersion": "autoscaler.mongodb.io/v1alpha1",
+    "kind": "MongodAutoscaler",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"autoscaler.mongodb.io/v1alpha1\",\"kind\":\"MongodAutoscaler\",\"metadata\":{\"annotations\":{},\"name\":\"socialnetwork-sanity\",\"namespace\":\"mambo-socialnetwork\"},\"spec\":{\"bitnami\":{\"namespace\":\"mambo-socialnetwork\",\"releaseName\":\"sn-mongodb-sharded\",\"servicePort\":27017},\"policy\":{\"cooldownSeconds\":300,\"cpuTargetPercent\":60,\"cpuTolerancePercent\":10,\"iowaitTargetPercent\":30,\"iowaitTolerancePercent\":5,\"window\":\"5m\"},\"prometheus\":{\"nodeExporterPort\":9100,\"url\":\"http://prometheus-operated.monitoring.svc.cluster.local:9090\"},\"replicaScaleBounds\":{\"maxReplicas\":1,\"minReplicas\":1},\"shardScaleBounds\":{\"maxShards\":1,\"minShards\":1}}}\n"
+        },
+        "creationTimestamp": "2026-09-19T07:09:21Z",
+        "generation": 8,
+        "name": "socialnetwork-sanity",
+        "namespace": "mambo-socialnetwork",
+        "resourceVersion": "20083970",
+        "uid": "d64013be-2459-4226-901d-06e15625d8f6"
+    },
+    "spec": {
+        "bitnami": {
+            "namespace": "mambo-socialnetwork",
+            "releaseName": "sn-mongodb-sharded",
+            "servicePort": 27017
+        },
+        "policy": {
+            "cooldownSeconds": 300,
+            "cpuTargetPercent": 25,
+            "cpuTolerancePercent": 25,
+            "iowaitTargetPercent": 30,
+            "iowaitTolerancePercent": 5,
+            "window": "1m"
+        },
+        "prometheus": {
+            "nodeExporterPort": 9100,
+            "url": "http://prometheus-operated.monitoring.svc.cluster.local:9090"
+        },
+        "replicaScaleBounds": {
+            "maxReplicas": 1,
+            "minReplicas": 1
+        },
+        "shardScaleBounds": {
+            "maxShards": 1,
+            "minShards": 1
+        }
+    },
+    "status": {
+        "lastDesiredReplicas": 1,
+        "lastDesiredShards": 2,
+        "lastObservedCPU": "61.730018",
+        "lastObservedIOWait": "1.027309",
+        "lastScaleTime": "2026-09-19T23:57:59Z",
+        "scalingPhase": "Idle",
+        "targetShardIndex": -1
+    }
+}
