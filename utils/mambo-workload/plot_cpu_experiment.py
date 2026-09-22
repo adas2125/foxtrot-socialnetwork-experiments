@@ -5,9 +5,10 @@ from pathlib import Path
 import re
 import matplotlib.pyplot as plt
 
-RUN_DIR = Path(
-    "/users/adas2125/.local/state/foxtrot-socialnetwork-experiments/"
-    "mambo-workload.Cc3WPN/dataset-512m/cpu-r100-clean.cX233M"
+RUN_DIR = (
+    Path(__file__).resolve().parents[2]
+    / "analysis"
+    / "mambo-cpu-r100"
 )
 OUTPUT_DIR = RUN_DIR / "plots"
 TRIALS = [
